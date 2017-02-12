@@ -11,13 +11,10 @@ public class DeleteDuplicates {
         if (head == null || head.next == null) {
             return head;
         }
-        int previousValue, currentValue;
         ListNode previousNode = head;
         ListNode currentNode = head.next;
         while (currentNode != null) {
-            previousValue = previousNode.val;
-            currentValue = currentNode.val;
-            if (previousValue == currentValue) {
+            if (previousNode.val == currentNode.val) {
                 previousNode.next = currentNode.next;
             } else {
                 previousNode = previousNode.next;
