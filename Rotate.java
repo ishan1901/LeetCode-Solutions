@@ -2,13 +2,13 @@ public class Rotate {
 
     // solution 1
     public void rotate(int[] nums, int k) {
-        if(nums.length <= 1 || nums.length == k) {
+        if(nums.length <= 1 || nums.length == k || k == 0) {
             return;
         }
         if (k > nums.length) { k = k % nums.length; }
         Deque<Integer> stack = new ArrayDeque<>();
         int i;
-        for (i = nums.length - 1; i > k; i--) {
+        for (i = nums.length - 1; i >= nums.length - k; i--) {
             stack.push(nums[i]);
         }
         int l = nums.length - 1;
