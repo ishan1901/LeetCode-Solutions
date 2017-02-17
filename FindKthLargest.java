@@ -12,21 +12,8 @@ public class FindKthLargest {
 		if (start > end) {
 			return 0;
 		}
-		int partitionIndex = 0;
-		//boolean repeat = true;
-		///while (repeat) {
-			//Random r = new Random();
-			//int randomIndex = r.nextInt(end + 1 - start) + start;
-			partitionIndex  = partition(array, start, end);
-			//double leftPercentage = (((end-partitionIndex + 1) * 100) / (end - start + 1));
-			//double rightPercentage = (((partitionIndex - start + 1) * 100) /(end - start + 1));
-			
-			//if (leftPercentage >= THRESHOLD && rightPercentage >= THRESHOLD) {
-				//repeat = false;
-			//}
-			
-			
-		//}
+		int partitionIndex  = partition(array, start, end);
+
 		if (partitionIndex == k) {
 			return array[partitionIndex];
 		} else if (partitionIndex < k) {
