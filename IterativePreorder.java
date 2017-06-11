@@ -17,12 +17,12 @@ public class IterativePreorder {
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode current = stack.pop();
-            while(current != null) {
-                if (current.right != null) {
-                    stack.push(current.right);
-                }
-                result.add(current.val);
-                current = current.left;
+            result.add(current.val);
+            if (current.right != null) {
+                stack.push(current.right);
+            }
+            if (current.left != null) {
+                stack.push(current.left);
             }
         }
         return result;
